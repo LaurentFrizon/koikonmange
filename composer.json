@@ -1,0 +1,13 @@
+{
+    "name": "carsarea/composer",
+    "type": "library",
+    "require": {
+        "almasaeed2010/adminlte": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "GLy",
+            "email": "32239502+LaurentFrizon@users.noreply.github.com"
+        }
+    ]
+}
