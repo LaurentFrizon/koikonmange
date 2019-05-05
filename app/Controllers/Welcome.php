@@ -38,6 +38,7 @@ class Welcome extends Controller
         $data['css'] = Assets::css([
         ]);
         $data['js'] = Assets::js([
+            
         ]);
         
         View::renderTemplate('header', $data);
