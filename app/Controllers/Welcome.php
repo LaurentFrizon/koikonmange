@@ -33,7 +33,7 @@ class Welcome extends Controller
      */
     public function index()
     {
-        $data['title'] = "CarsArea";
+        $data['title'] = "Accueil";
         
         $data['css'] = Assets::css([
         ]);
