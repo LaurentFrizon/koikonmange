@@ -1,2 +1,5 @@
 app/Core/Config.php
 .DS_Store
+.settings
+.htaccess
+.gitignore

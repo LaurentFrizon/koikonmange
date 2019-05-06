@@ -15,6 +15,9 @@ namespace Helpers;
  */
 class Url
 {
+    
+    const URI_AJAX_ACCUEIL = "ajax/accueil";
+    
     /**
      * Redirect to chosen url.
      *

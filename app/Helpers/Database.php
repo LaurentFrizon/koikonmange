@@ -17,6 +17,11 @@ use PDO;
  */
 class Database extends PDO
 {
+    
+    const K_T_RECS      = "kkm_recettes";
+    const K_T_INGS      = "kkm_ingredients";
+    const K_V_RECSINGS  = "kkm_v_recettesingredients";
+    
     /**
      * @var array Array of saved databases for reusing
      */

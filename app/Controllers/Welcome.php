@@ -14,6 +14,9 @@ use Core\Controller;
 use Core\View;
 use Helpers\Assets;
 use Helpers\Url;
+use Helpers\hError;
+use Helpers\Tools;
+use Models\mAccueil;
 
 /**
  * Sample controller showing a construct and 2 methods and their typical usage.
@@ -28,6 +31,16 @@ class Welcome extends Controller
         parent::__construct();
     }
 
+    public function ajax() {
+        $action = Tools::getPost("action");
+        $dbg["action"] = $action;
+        
+        if($action == "load-recette-random") {
+            $this->loadRecetteRandom($dbg);
+            return;
+        }
+    }
+    
     /**
      * Define Index page title and load template files.
      */
@@ -38,12 +51,28 @@ class Welcome extends Controller
         $data['css'] = Assets::css([
         ]);
         $data['js'] = Assets::js([
-            
+            Url::templatePath().'js/accueil.js',
         ]);
         
         View::renderTemplate('header', $data);
         View::render('welcome/welcome', $data);
         View::renderTemplate('footer', $data);
+    }
+    
+    public function loadRecetteRandom($dbg)
+    {
+        $model = new mAccueil();
+        $recette = $model->getRecetteRandom();
+        
+        $error = hError::NO_ERROR;
+        $array = [
+            "status" => $error,
+            "dbg" => $dbg,
+            "recette" => $recette,
+        ];
+        
+        echo json_encode($array);
+        exit();
     }
 
     /**
