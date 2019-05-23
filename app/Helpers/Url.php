@@ -15,8 +15,11 @@ namespace Helpers;
  */
 class Url
 {
-    
+    // Accueil
     const URI_AJAX_ACCUEIL = "ajax/accueil";
+    
+    // Ajout recette
+    const URI_AJOUT_RECETTE = "ajout/recette";
     
     /**
      * Redirect to chosen url.
@@ -78,6 +81,15 @@ class Url
             return DIR.'app/templates/'.$custom.'/';
         } else {
             return DIR.'app/templates/'.TEMPLATE.'/';
+        }
+    }
+    
+    public static function appTemplatePath($custom = false)
+    {
+        if ($custom) {
+            return DIR . $custom.'/';
+        } else {
+            return DIR . TEMPLATE.'/';
         }
     }
 

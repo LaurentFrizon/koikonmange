@@ -1,24 +1,26 @@
-
-var btnOui = document.getElementById("btn-oui");
-clickBtnOui = () => {
-	console.log("oui");
-}
-clickBtnNon = () => {
-	var nomPlat = document.getElementById("nom-du-plat");
-	console.log("non");
+$(document).ready(function() {
 	
-	var form = {
-		action: "load-recette-random",
+	var btnSave = document.getElementById("btn-save");
+	
+	clickBtnOui = () => {
+		console.log("oui");
 	}
-
-	$.post(ajaxAccueilUrl, form, function(data){
-		if(data.status != 1){
-			console.log("zdzdzd", data.error)
-			return;
+	clickBtnNon = () => {
+		var nomPlat = document.getElementById("nom-du-plat");
+		console.log("non");
+		
+		var form = {
+				action: "load-recette-random",
 		}
-		document.getElementById("nom-du-plat").innerHTML = data.recette[0].nom_recette;
-		document.getElementById("image-du-plat").src = srcPlat + data.recette[0].img_recette;
-
-	}, "json");
-
-}
+		
+		$.post(ajaxAccueilUrl, form, function(data){
+			if(data.status != 1){
+				console.log("zdzdzd", data.error)
+				return;
+			}
+			nomPlat.innerHTML = data.recette[0].nom_recette;
+			document.getElementById("image-du-plat").src = srcPlat + data.recette[0].img_recette;
+		}, "json");
+		
+	}
+});

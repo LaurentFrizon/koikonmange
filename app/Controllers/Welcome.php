@@ -51,7 +51,6 @@ class Welcome extends Controller
         $data['css'] = Assets::css([
         ]);
         $data['js'] = Assets::js([
-            Url::templatePath().'js/accueil.js',
         ]);
         
         View::renderTemplate('header', $data);

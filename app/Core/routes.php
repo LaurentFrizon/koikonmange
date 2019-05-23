@@ -15,8 +15,9 @@ use Helpers\Url;
 
 /* Define routes. */
 Router::any('', 'Controllers\Welcome@index');
+Router::any(Url::URI_AJOUT_RECETTE, 'Controllers\ajoutRecetteController@index');
 Router::any('subpage', 'Controllers\Welcome@subPage');
-Router::any('ajax/accueil', 'Controllers\Welcome@ajax');
+Router::any(Url::URI_AJAX_ACCUEIL, 'Controllers\Welcome@ajax');
 
 /* Module routes. */
 $hooks = Hooks::get();

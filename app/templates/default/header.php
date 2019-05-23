@@ -25,14 +25,15 @@ $hooks = Hooks::get();
 	<?php
     Assets::css([
         '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
-        'vendor/almasaeed2010/adminlte/dist/css/skins/skin-blue.css',
-        'vendor/almasaeed2010/adminlte/dist/css/adminlte.css.map',
-        'vendor/almasaeed2010/adminlte/dist/css/AdminLTE.css',
+        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/skins/skin-blue.css'),
+        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/adminlte.css.map'),
+        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/AdminLTE.css'),
         Url::templatePath().'css/style.css',
     ]);
     Assets::js([
         Url::templatePath().'js/jquery.js',
-        'vendor/almasaeed2010/adminlte/dist/js/adminlte.js',
+        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/js/adminlte.js'),
+        Url::templatePath().'js/accueil.js',
         Url::templatePath().'js/site.js',
     ]);
 
