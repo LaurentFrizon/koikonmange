@@ -3,6 +3,8 @@ namespace Controllers;
 
 use Core\Controller;
 use Core\View;
+use Helpers\Assets;
+use Helpers\Url;
 
 class AjoutRecetteController extends Controller {
     
@@ -11,6 +13,10 @@ class AjoutRecetteController extends Controller {
     }
     
     public function index() {
+
+        $data['JS'] = Assets::js([
+            
+        ]);
         
         View::renderTemplate('header', $data);
         View::render('ajoutRecetteView', $data);

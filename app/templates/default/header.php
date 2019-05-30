@@ -18,23 +18,30 @@ $hooks = Hooks::get();
 	<?php
     //hook for plugging in meta tags
     $hooks->run('meta');
-    ?>
+  ?>
 	<title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/Core/Config.php ?></title>
 
 	<!-- CSS -->
 	<?php
     Assets::css([
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
-        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/skins/skin-blue.css'),
-        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/adminlte.css.map'),
-        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/AdminLTE.css'),
-        Url::templatePath().'css/style.css',
+      '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+      Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/skins/skin-blue.css'),
+      Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/adminlte.css.map'),
+      Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/css/AdminLTE.css'),
+      Url::templatePath().'css/addIngredients.css',
+      Url::templatePath().'css/style.css',
     ]);
     Assets::js([
-        Url::templatePath().'js/jquery.js',
-        Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/js/adminlte.js'),
-        Url::templatePath().'js/accueil.js',
-        Url::templatePath().'js/site.js',
+      //Url::templatePath().'js/jquery.js',
+      'https://code.jquery.com/jquery-3.4.1.min.js',
+      Url::appTemplatePath('vendor/almasaeed2010/adminlte/dist/js/adminlte.js'),
+      Url::appTemplatePath('node_modules/vue/dist/vue.min.js'),
+      Url::appTemplatePath('node_modules/vue/dist/vue.js'),
+      Url::templatePath().'js/accueil.js',
+      Url::templatePath().'js/ajoutRecette/addIngredients.js',
+      Url::templatePath().'js/ajoutRecette/addReceipes.js',
+      Url::templatePath().'js/ajoutRecette/addPage.js',
+      Url::templatePath().'js/site.js',
     ]);
 
     //hook for plugging in css
@@ -84,7 +91,7 @@ $hooks->run('afterBody');
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -170,14 +177,14 @@ $hooks->run('afterBody');
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">Alexander Pierce</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="" class="img-circle" alt="User Image">
     
                     <p>
                       Alexander Pierce - Web Developer
@@ -218,15 +225,16 @@ $hooks->run('afterBody');
           </div>
         </nav>
       </header>
-	<aside class="main-sidebar control-sidebar control-sidebar-dark">
-    
+
+    <!-- ASIDE -->
+    <aside class="main-sidebar control-sidebar control-sidebar-dark">
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
     
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>Alexander Pierce</p>
@@ -251,7 +259,7 @@ $hooks->run('afterBody');
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">HEADER</li>
           <!-- Optionally, you can add icons to the links -->
-          <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+          <li class="active"><a href="<?= Url::appTemplatePath(Url::URI_AJOUT_RECETTE); ?>"><i class="fa fa-link"></i> <span>Add Receip ?</span></a></li>
           <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
           <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

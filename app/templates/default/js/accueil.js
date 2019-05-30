@@ -10,7 +10,7 @@ $(document).ready(function() {
 		console.log("non");
 		
 		var form = {
-				action: "load-recette-random",
+			action: "load-recette-random",
 		}
 		
 		$.post(ajaxAccueilUrl, form, function(data){
