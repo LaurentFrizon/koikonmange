@@ -32,9 +32,9 @@ var addIngredients = {
 
     methods: {
         clickBtn: function() {
-            if(!(this.value.nomIng && this.value.typeIng && this.value.calIng && this.value.prixIng)) {
+            /* if(!(this.value.nomIng && this.value.typeIng && this.value.calIng && this.value.prixIng)) {
                 return alert(Error.ErrSaisie);
-            }
+            } */
             this.$emit("save-ingredient");
 
         },

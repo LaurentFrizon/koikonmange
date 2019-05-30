@@ -15,12 +15,12 @@ namespace Helpers;
  */
 class Url
 {
-    // Accueil
+    // Ajax
     const URI_AJAX_ACCUEIL = "ajax/accueil";
+    const URI_AJAX_ADD = "ajax/add/ingredient";
     
     // Ajout recette
-    const URI_AJOUT_RECETTE = "ajout/recette";
-    
+    const URI_AJOUT_RECETTE = "ajout";
     /**
      * Redirect to chosen url.
      *

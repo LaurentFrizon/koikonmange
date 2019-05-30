@@ -46,17 +46,21 @@ jQuery(document).ready(function($) {
         },
 
         created: function(){
-            // var form = {
-            //     action: ""
-            // }
-            // $.post(url, form, function(data){
-
-            // },"json");
+            
         },
 
         methods: {
             saveIng: function() {
-                console.log("yuyuyu")
+                var form = {
+                    action: "save-ingredient",
+                    nom: this.ingredient.nomIng,
+                    type: this.ingredient.typeIng,
+                    cal: this.ingredient.calIng,
+                    prix: this.ingredient.prixIng,
+                }
+                $.post(ajaxUrladdIng, form, function(data){
+                    // Ne rien faire
+                },"json");
             },
         }
 
